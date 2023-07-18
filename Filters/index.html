@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en" ng-app="FiltersModule">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Filters App</title>
+    <script src="../public/js/ajax.googleapis.com_ajax_libs_angularjs_1.8.2_angular.min.js"></script>
+    <script src="../public/js/angular-local-storage.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-controller="FiltersController">
+{{mi_html | json}}
+<p>
+    {{costo | currency: 'Bs. '}}
+</p>
+</body>
+</html>
