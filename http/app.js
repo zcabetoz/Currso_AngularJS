@@ -2,11 +2,15 @@ angular.module("HttpApp", [])
     .controller("HttpController", ['$scope', '$http', function ($scope, $http) {
         $scope.posts = [];
         $scope.newPost = {};
+        $scope.loading = true;
         $http.get("https://jsonplaceholder.typicode.com/posts")
             .then(function (response) {
+                $scope.loading = false;
                 $scope.posts = response.data;
             })
-
+            .catch(function () {
+                $scope.loading = false
+            })
 
         $scope.addPost = function () {
             $http.post("https://jsonplaceholder.typicode.com/posts", {

@@ -6,27 +6,55 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Angular Api</title>
+    <style>
+        .animated {
+            opacity: 1;
+            max-height: 50%;
+            overflow: hidden;
+            transition: all 2s;
+        }
+
+        .animated.ng-hide {
+            opacity: 0;
+            max-height: 0 !important;
+            display: block;
+        !important;
+        }
+
+    </style>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <script src="app.js"></script>
 </head>
 <body ng-controller="HttpController">
-<label for="newTitle"> New Post</label>
-<input type="text" id="newTitle" ng-model="newPost.title">
-<br>
-<label for="newBody">Description</label><br>
-<textarea id="newBody" ng-model="newPost.body">
+
+<fieldset>
+    <legend>New Post</legend>
+
+    <label for="newTitle"> New Post</label>
+    <input type="text" id="newTitle" ng-model="newPost.title">
+    <br>
+    <label for="newBody">Description</label><br>
+    <textarea id="newBody" ng-model="newPost.body">
 
 </textarea>
-<p>
-    <button ng-click="addPost()">Enviar</button>
-</p>
-<ul>
-    <li ng-repeat="post in posts">
-        <h2>{{post.title}}</h2>
-        <p>
-            {{post.body}}
-        </p>
-    </li>
-</ul>
+    <p>
+        <button ng-click="addPost()">Enviar</button>
+    </p>
+
+</fieldset>
+<hr>
+<fieldset>
+    <legend><b>Posts</b></legend>
+    <div ng-show="loading">Cargando...</div>
+    <div ng-show="!loading && posts.length <=0 ">No se encontraron resultados...</div>
+    <ul ng-show="posts.length > 0" class="animated">
+        <li ng-repeat="post in posts">
+            <h2>{{post.title}}</h2>
+            <p>
+                {{post.body}}
+            </p>
+        </li>
+    </ul>
+</fieldset>
 </body>
 </html>
