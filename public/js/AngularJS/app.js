@@ -1,1 +1,2 @@
-let app = angular.module("ngMainApp", [])
+let app = angular.module("ngMainApp", ["LocalStorageModule"])
+let serviceApp = angular.module("ngServiceApp", ["LocalStorageModule"])

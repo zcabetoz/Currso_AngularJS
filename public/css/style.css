@@ -1,0 +1,12 @@
+.animate{
+    opacity: 1;
+    max-height: max-content;
+    overflow: hidden;
+    transition: all 4s;
+}
+.animate.ng-hide{
+    opacity: 0;
+    max-height: 0 !important;
+    overflow: hidden;
+    display: block !important;
+}
