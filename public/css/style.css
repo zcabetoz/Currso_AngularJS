@@ -1,12 +1,58 @@
-.animate{
+.animate {
     opacity: 1;
     max-height: max-content;
     overflow: hidden;
     transition: all 4s;
 }
-.animate.ng-hide{
+
+.animate.ng-hide {
     opacity: 0;
     max-height: 0 !important;
     overflow: hidden;
     display: block !important;
+}
+
+.btn-eliminar {
+    background-color: red;
+    color: white;
+    border: red;
+    cursor: pointer;
+    padding: 5px 5px;
+}
+
+.btn-activar {
+    background-color: chartreuse;
+    border: chartreuse;
+    color: white;
+}
+
+.btn-desactivar {
+    background-color: red;
+    border: red;
+    color: white;
+}
+
+.circular{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}
+ul{
+    text-align: center !important;
+    list-style: none
+}
+body,html{
+    text-align: center !important;
+    background-color: #eee;
+    margin: 0;
+}
+input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 5px;
+    border: none;
+}
+#limpiar {
+    cursor: pointer;
 }
